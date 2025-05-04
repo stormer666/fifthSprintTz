@@ -20,12 +20,12 @@ func (p Personal) Print() {
 		log.Println(err)
 		return
 	}
-	if p.Weight <= 0 {
+	if p.Weight <= 0.0 {
 		err := errors.New("zero weight output value")
 		log.Println(err)
 		return
 	}
-	if p.Height <= 0 {
+	if p.Height <= 0.0 {
 		err := errors.New("zero height output value")
 		log.Println(err)
 		return
