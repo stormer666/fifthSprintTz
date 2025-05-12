@@ -55,14 +55,14 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 	if steps <= 0 {
 		err := errors.New("zero or negative number of steps")
 		log.Println(err)
-		return 0.0, err
+		return 0, err
 	}
-	if weight <= 0.0 {
+	if weight <= 0 {
 		err := errors.New("incorrect weight value")
 		log.Println(err)
 		return 0, err
 	}
-	if height <= 0.0 {
+	if height <= 0 {
 		err := errors.New("incorrect height value")
 		log.Println(err)
 		return 0, err
