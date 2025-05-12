@@ -1,9 +1,9 @@
 package personaldata
 
 import (
-	"errors"
+	//"errors"
 	"fmt"
-	"log"
+	//"log"
 )
 
 type Personal struct {
@@ -15,20 +15,20 @@ type Personal struct {
 
 func (p Personal) Print() {
 	// TODO: реализовать функцию
-	if p.Name == "" {
-		err := errors.New("the name should not be empty")
-		log.Println(err)
-		return
-	}
-	if p.Weight <= 0.0 {
-		err := errors.New("zero weight output value")
-		log.Println(err)
-		return
-	}
-	if p.Height <= 0.0 {
-		err := errors.New("zero height output value")
-		log.Println(err)
-		return
-	}
+	//if p.Name == "" {
+	//	err := errors.New("the name should not be empty")
+	//	log.Println(err)
+	//	return
+	//}
+	//if p.Weight == 0.0 {
+	//	err := errors.New("zero weight output value")
+	//	log.Println(err)
+	//	return
+	//}
+	//if p.Height == 0.0 {
+	//	err := errors.New("zero height output value")
+	//	log.Println(err)
+	//	return
+	//}
 	fmt.Printf("Имя: %s\nВес: %.2f кг.\nРост: %.2f м.\n\n", p.Name, p.Weight, p.Height)
 }

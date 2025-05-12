@@ -24,7 +24,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	// TODO: реализовать функцию
 	str := strings.Split(datastring, ", ")
 
-	if len(str) < 3 {
+	if len(str) != 3 {
 		err := errors.New("invalid string length")
 		log.Println(err)
 		return err
@@ -93,5 +93,5 @@ func (t Training) ActionInfo() (string, error) {
 		log.Println(err)
 		return "", err
 	}
-	return fmt.Sprintf("Тип тренировки:%s\nДлительность:%.2f\n,Дистанция:%.2f\nСкорость:%.2f\nСожгли калорий:%.2f\n", t.TrainingType, float64(t.Duration)/float64(time.Hour), distance, averageSpeed, ccal), nil
+	return fmt.Sprintf("Тип тренировки:%s\nДлительность:%.2f ч.\n,Дистанция:%.2f км.\nСкорость:%.2f км/ч\nСожгли калорий:%.2f\n", t.TrainingType, float64(t.Duration)/float64(time.Hour), distance, averageSpeed, ccal), nil
 }

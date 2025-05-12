@@ -2,12 +2,13 @@ package actioninfo
 
 import (
 	"errors"
+	"fmt"
 	"log"
 )
 
 type DataParser interface {
 	// TODO: добавить методы
-	Parse(string) error
+	Parse(datastring string) error
 	ActionInfo() (string, error)
 }
 
@@ -21,7 +22,13 @@ func Info(dataset []string, dp DataParser) {
 			log.Println(err)
 			continue
 		}
-		dp.ActionInfo()
+
+		result, err := dp.ActionInfo()
+		if err != nil {
+			log.Printf("error in ActionInfo(): %v", err)
+			continue
+		}
+		fmt.Println(result)
 	}
 
 }

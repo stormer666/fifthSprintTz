@@ -21,12 +21,12 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 		log.Println(err)
 		return 0, err
 	}
-	if weight <= 0 {
+	if weight <= 0.0 {
 		err := errors.New("incorrect weight value")
 		log.Println(err)
 		return 0, err
 	}
-	if height <= 0 {
+	if height <= 0.0 {
 		err := errors.New("incorrect height value")
 		log.Println(err)
 		return 0, err
@@ -60,17 +60,17 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 	if weight <= 0.0 {
 		err := errors.New("incorrect weight value")
 		log.Println(err)
-		return 0.0, err
+		return 0, err
 	}
 	if height <= 0.0 {
 		err := errors.New("incorrect height value")
 		log.Println(err)
-		return 0.0, err
+		return 0, err
 	}
-	if duration <= 0.0 {
+	if duration <= 0 {
 		err := errors.New("incorrect time value")
 		log.Println(err)
-		return 0.0, err
+		return 0, err
 	}
 
 	averageSpeed := MeanSpeed(steps, height, duration)

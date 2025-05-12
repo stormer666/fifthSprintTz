@@ -23,35 +23,36 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 	// TODO: реализовать функцию
 	str := strings.Split(datastring, ", ")
 
-	if len(str) <= 3 {
-		err := errors.New("invalid string length")
-		log.Println(err)
-		return err
+	if len(str) != 2 {
+		//err := errors.New("invalid string length !=2")
+		//log.Println(err)
+		return errors.New("invalid string length !=2")
 	}
 
 	steps, err := strconv.Atoi(str[0])
 	if err != nil {
-		err := errors.New("step conversion error")
-		log.Println(err)
+		//err := errors.New("step conversion error")
+		//log.Println(err)
 		return err
 	}
 	if steps <= 0 {
-		err := errors.New("incorrect number of steps")
-		log.Println(err)
-		return err
+		//err := errors.New("incorrect number of steps")
+		//log.Println(err)
+		return errors.New("incorrect number of steps")
+
 	}
 	ds.Steps = steps
 
-	timeDuration, err := time.ParseDuration(str[2])
+	timeDuration, err := time.ParseDuration(str[1])
 	if err != nil {
-		err := errors.New("time conversion error")
-		log.Println(err)
+		//err := errors.New("time conversion error")
+		//log.Println(err)
 		return err
 	}
 	if timeDuration <= 0 {
-		err := errors.New("incorrect amount of time")
-		log.Println(err)
-		return err
+		//err := errors.New("incorrect amount of time")
+		//log.Println(err)
+		return errors.New("incorrect amount of time")
 	}
 
 	ds.Duration = timeDuration
